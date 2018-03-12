@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <label>NHẬP VÀO SỐ BẠN MUỐN</label>
+    <input type="number" name="number" id="sqrtNum">
+    <button type="button" onkeypress="squareNum()">Click</button>
+    <h4 id="yes" hidden=true>Số này là số chính phương</h4>
+    <h4 id="no" hidden=true>Số này không phải là số chính phương</h4>
+    <script>
+        var a = document.getElementById("sqrtNum").value;
+        function squareNum() {
+            if (Math.sqrt(a) % 1 == 0) {
+                console.log("Số " + a + " là số chính phương");
+                document.getElementById("yes").hidden = false; 
+            }
+            else {
+                console.log("Số " + a + " không phải là số chính phương");
+                document.getElementById("no").hidden = false;
+            }
+        }
+    </script>
+</body>
+</html>

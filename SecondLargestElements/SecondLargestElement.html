@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Click the button to display the array values after the split.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        /* var a = 6;
+        var b = 1082;
+            function myFunction() {
+            var du = 0;
+            var total = [];
+            var b1 = b.toString().split('');
+            for (i = b1.length-1; i >= 0; i--) {
+                var temp = a*b1[i] + du;
+                var number = parseInt(temp % 10) ;
+                total.unshift(number)
+                console.log(number);
+                du = parseInt(temp / 10);
+                console.log(du);
+            }
+            console.log(total);
+        
+        }
+    
+        myFunction();*/
+
+        function myFunction() {
+
+            var arr = [100, 99, 30, 12, 26, 1, 10, 29, 12, 16, 8, 15, 35, 27, 46];
+            // console.log(arr.length);
+            // arr.sort(function(a,b){return a-b});
+            // console.log(arr[arr.length-2]);
+            // document.write(arr[arr.length-2]);
+
+            var i = 0;
+            var first = arr[0];
+            console.log("previous first " + first);
+            var second = arr[1];
+            console.log("previous second " + second);
+            for (i; i <= arr.length - 1; i++) {
+                // console.log(arr[i]);
+
+                // bat buoc second phai lon hon tat ca cac so va be hon 1 so, neu be hon 2 so thi loai
+                if (arr[i] > parseInt(first)) {
+                    second = first;
+                    first = arr[i];
+                }
+                if (arr[i] > parseInt(second) && arr[i] < parseInt(first)) {
+                    second = arr[i];
+                }
+                //console.log("final second number " + second);
+            }
+            console.log("final second number " + second);
+        }
+
+        myFunction();
+    </script>
+
+</body>
+
+</html>
