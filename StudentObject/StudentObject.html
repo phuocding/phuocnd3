@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script lang="javascript">
+        
+        var Student = {
+                data: [{id:"001",name:"Adele",email:"adele001@gmail.com"}],
+
+                viewStudent() {
+                    //dung vong for de hien thi student
+                    listStudent = this.data;
+
+                    for (i = 0; i < listStudent.length; i++) {
+                        console.log(listStudent);
+                        document.write("<div>" + listStudent[i].id
+                            + "|" + listStudent[i].name + "|"
+                            + listStudent[i].email + "</div>")
+                    }
+                },
+
+                addStudent(id, name, email) {
+                    //dung push() de cho vao mang
+                    var item = {
+                        id: id,
+                        name: name,
+                        email: email
+                    };
+
+                    this.data.push(item);
+                },
+                removeStudent(id) {
+                    //dung splice() de xoa id cua student
+                    // dung loop de search qua array
+                    for (i = 0; i < this.data.length; i++) {
+                        if (this.data[i].id === id) {
+                            this.data.splice(i, 1);
+                        }
+                    }
+                },
+                editStudent(id, name, email) {
+                    //search student co trong mang
+                    for (i = 0; i < this.data.length; i++) {
+                        if (this.data[i].id === id) {
+                            this.data[i].name == name;
+                            this.data[i].email == email;
+                        }
+                    }
+                }
+            }
+
+            document.write("<h2>Student Lists at the first time: </h2></br>");
+            document.write("<h4>Mảng data ban đầu: </br>" + Student.data[0].name + " </h4></br>");
+            document.write("<h4>viewStudent: </h4></br></br>");
+            Student.viewStudent();
+
+            Student.addStudent("123", "NPM", "npm@123");
+            Student.addStudent("121", "CMD", "cmd@121");
+            Student.addStudent("124", "NODE", "node@124");
+
+            document.write("<h2>Student Lists right now: </h2></br>");
+            document.write("<h4>Mảng data sau đó: </br>" 
+            + Student.data[0].name + "</br>"
+            + Student.data[1].name + "</br>"
+            + Student.data[2].name + "</br>"
+            + Student.data[3].name + "</h4></br>");
+            document.write("<h4>viewStudent: </h4></br>");
+            Student.viewStudent();
+    </script>
+</body>
+</html>
